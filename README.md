@@ -29,12 +29,15 @@ VSCode command palette.
 让项目可以使用 @ 别名
 
 3. 校验周边库
-npm install eslint eslint-plugin-vue typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin prettier eslint-config-prettier eslint-plugin-prettier -D
+npm install eslint eslint-plugin-vue typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin prettier eslint-config-prettier eslint-plugin-prettier  @types/eslint @types/node -D
 
 eslint: ESLint的核心代码
 @typescript-eslint/parser：ESLint的解析器，用于解析typescript，从而检查和规范Typescript代码
 @typescript-eslint/eslint-plugin：这是一个ESLint插件，包含了各类定义好的检测Typescript代码的规范
 eslint-plugin-import eslint-import-resolver-alias  这两个库是让我们可以import的时候使用 @ 别名的
+
+类型审核相关文件
+@types/eslint @types/node
 
 4. 创建一系列文件
 settings.json
@@ -59,4 +62,17 @@ npx mrm@2 lint-staged
 6.git commit的注释规范
 npm install --save-dev @commitlint/{config-conventional,cli}
 增加文件 commitlint.config.js
+```
+
+## 一些问题
+
+```
+1. 不能使用命名空间当做类型
+
+import { GoodsInterface } from '@/models/goodsModal'
+
+也可以这样些
+import type { GoodsInterface } from '@/models/goodsModal'
+
+不需要添加 .ts后缀，不然就报错
 ```
