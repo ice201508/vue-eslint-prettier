@@ -35,5 +35,7 @@ module.exports = {
     'vue/multi-word-component-names': 0,
     'vue/attribute-hyphenation': 0,
     'vue/v-on-event-hyphenation': 0,
+    'no-console': 0,
+    'no-unused-vars': 1,
   },
 }

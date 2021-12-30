@@ -92,3 +92,17 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 plugin 字段里面加入  vueJsx()
 在script标签上面写上 lang="tsx"
 ```
+
+### APIS
+
+- **toRaw, makeRaw**
+
+*
+
+### 第三方库
+
+1. **lodash-es**
+
+```
+npm install lodash-es @types/lodash-es -D
+```
