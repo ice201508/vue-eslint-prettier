@@ -76,3 +76,17 @@ import type { GoodsInterface } from '@/models/goodsModal'
 
 不需要添加 .ts后缀，不然就报错
 ```
+
+### 渲染函数
+
+[vue JSX](https://github.com/vuejs/jsx-next/blob/dev/packages/babel-plugin-jsx/README-zh_CN.md)
+
+```
+使用jsx来写模板  不需要 babel.config.js，官网步骤不对
+
+npm install @vitejs/plugin-vue-jsx -D
+vite.config.js 里面添加
+import vueJsx from '@vitejs/plugin-vue-jsx'
+plugin 字段里面加入  vueJsx()
+在script标签上面写上 lang="tsx"
+```
