@@ -16,14 +16,14 @@ const Demo = defineComponent({
   //   const tag = `h${this.$props.level}`
   //   return h(tag, '测试标题')
   // },
-  // return h('div',
-  //   Array.from({ length: 20 }).map(() => {
-  //     return h('p', 'hi')
-  //   })
-  // )
+  // render() {
+  //   return Array.from({ length: 20 }).map(() => h('p', 'hi'))
+  // },
   render() {
+    const Tag = `h${this.$props.level}`
     return (
       <>
+        <Tag>标题</Tag>
         <div>JSX test</div>
         <div>标题</div>
       </>

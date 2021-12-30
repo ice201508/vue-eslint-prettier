@@ -3,15 +3,19 @@
     {{ testa }}
   </div>
   <HeaderqQa />
-  <RenderFunctionVue :level="1" />
-  <RenderFunctionVue :level="4" />
+  <!-- <RenderFunctionVue :level="1" />
+  <RenderFunctionVue :level="4" /> -->
+  <RenderFunctionVue2 />
+  <RenderFunctionVue3 />
 </template>
 
 <script setup lang="ts">
 import { ref, Ref } from 'vue'
 
 import HeaderqQa from '@/components/HeaderqQa.vue'
-import RenderFunctionVue from '@/components/renderFunction.vue'
+// import RenderFunctionVue from '@/components/renderFunction.vue'
+import RenderFunctionVue2 from '@/components/rendeFunction2.vue'
+import RenderFunctionVue3 from '@/components/renderFunction3.vue'
 import type { GoodsInterface } from '@/models/goodsModal'
 
 const testa: Ref<string> = ref<string>('测试')
