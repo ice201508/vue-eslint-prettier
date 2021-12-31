@@ -106,3 +106,20 @@ plugin 字段里面加入  vueJsx()
 ```
 npm install lodash-es @types/lodash-es -D
 ```
+
+2. **可视化打包结果**
+
+```
+npm install rollup-plugin-visualizer -D
+
+vite.config.ts 配置
+import { visualizer } from 'rollup-plugin-visualizer';
+plugin: [
+  visualizer({
+    open: false,
+    gzipSize: true,
+    brotliSize: true,
+    // sourcemap: true,
+  })
+]
+```
