@@ -11,10 +11,26 @@
     <div>{{ markRawObj.name }}, {{ markRawObj.age }}</div>
     <div>{{ o3.name }}</div>
   </div>
+  <hr />
+  <div>
+    <button @click="updateReadonly">readonly数据修改</button>
+    <div>{{ readonlyObj.sku }}</div>
+  </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, unref, isRef, toRaw, markRaw, reactive } from 'vue'
+import {
+  ref,
+  unref,
+  isRef,
+  toRaw,
+  markRaw,
+  reactive,
+  readonly,
+  isProxy,
+  isReactive,
+  isReadonly,
+} from 'vue'
 import { cloneDeep } from 'lodash-es'
 
 import type { GoodsInterface } from '@/models/goodsModal'
@@ -59,6 +75,28 @@ const updateMarkRow = () => {
   o3.name = 'markRaw'
   markRawObj.name = 'markRaw'
   console.log(o3, markRawObj)
+}
+
+// --------------- readonly
+const readonlyObj = readonly({ sku: 111 })
+const readonlyObj1 = readonly(ref({ sku: 111 }))
+const readonlyObj2 = readonly(reactive({ sku: 111 }))
+
+const updateReadonly = () => {
+  readonlyObj.sku = 2222
+  readonlyObj1.value.sku = 'ref'
+  readonlyObj2.sku = 'reactive'
+  console.log(readonlyObj, readonlyObj1.value, readonlyObj2)
+  console.log(isProxy(o1), isProxy(reactiveO1))
+  // isReactive 是否是响应式，不是说是否是reactive定义的
+  console.log(
+    isReactive(readonlyObj),
+    isReactive(readonlyObj1.value),
+    isReactive(readonlyObj2),
+    isReadonly(readonlyObj),
+    isReadonly(readonlyObj1.value),
+    isReadonly(readonlyObj2)
+  )
 }
 </script>
 
