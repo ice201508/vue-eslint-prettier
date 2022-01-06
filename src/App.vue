@@ -6,9 +6,10 @@
   <!-- <VueApiFreeze /> -->
   <!-- <VueApiShadaw /> -->
   <!-- <VueApiRefReactive /> -->
-  <button @click="updateProp">app修改</button>
+  <!-- <button @click="updateProp">app修改</button> -->
   <!-- <VueApitoRefs :title="title" /> -->
-  <VueApiCustomRef />
+  <!-- <VueApiCustomRef /> -->
+  <XStateCom />
 </template>
 
 <script setup lang="ts">
@@ -22,6 +23,7 @@ import VueApiShadaw from '@/components/vue-apis/shadaw.vue'
 import VueApiRefReactive from '@/components/vue-apis/ref-reactive.vue'
 import VueApitoRefs from '@/components/vue-apis/toRef-s.vue'
 import VueApiCustomRef from '@/components/vue-apis/customRef.vue'
+import XStateCom from '@/components/xstate/index.vue'
 
 const title: Ref<string> = ref('111')
 const updateProp = () => {

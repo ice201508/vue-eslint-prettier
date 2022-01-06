@@ -123,3 +123,11 @@ plugin: [
   })
 ]
 ```
+
+3. **xstate**
+
+> https://blog.zfanw.com/xstate-state-management/
+
+```
+npm install xstate @xstate/vue -S
+```
