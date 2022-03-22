@@ -41,7 +41,7 @@ export const buttonStatus = createMachine({
             },
             onDone: {
               target: 'normal',
-              actions: assign({ user: (context, event) => event.data }),
+              // actions: assign({ user: (context, event) => event.data }),
               // actions: assign({
               //   // 获取到数据后调用 XState.assign 将数据存入 context.list
               //   time: (context, event) => event.data,

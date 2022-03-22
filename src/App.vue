@@ -9,7 +9,8 @@
   <!-- <button @click="updateProp">app修改</button> -->
   <!-- <VueApitoRefs :title="title" /> -->
   <!-- <VueApiCustomRef /> -->
-  <XStateCom />
+  <!-- <XStateCom /> -->
+  <XStateInvoke />
 </template>
 
 <script setup lang="ts">
@@ -24,6 +25,7 @@ import VueApiRefReactive from '@/components/vue-apis/ref-reactive.vue'
 import VueApitoRefs from '@/components/vue-apis/toRef-s.vue'
 import VueApiCustomRef from '@/components/vue-apis/customRef.vue'
 import XStateCom from '@/components/xstate/index.vue'
+import XStateInvoke from '@/components/xstate/invoke.vue'
 
 const title: Ref<string> = ref('111')
 const updateProp = () => {
